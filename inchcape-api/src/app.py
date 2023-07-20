@@ -1,12 +1,11 @@
 import sys
 import requests
 import logging
-sys.path.append('../')
 from config import credentials
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
-def lambda_handler(event, context):
+def handler(event, context):
     url = credentials.URL_TYPICODE
     response = requests.get(url)
     if response.status_code == 200:
