@@ -6,6 +6,6 @@ stack_name = "inchcape-api"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-131ry9iasdxr9"
 s3_prefix = "inchcape-api"
 region = "us-east-2"
-confirm_changeset = true
+confirm_changeset = false
 capabilities = "CAPABILITY_IAM"
 image_repositories = []
