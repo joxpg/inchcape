@@ -42,4 +42,25 @@ jobs:
         run: |
           cd inchcape-api
           sam deploy --debug # Change the stack name as needed
-
+  semanticversion:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'  # Add this line to execute the job only on the main branch
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 13
+    - name: Add plugin for conventional commits
+      run: npm install conventional-changelog-conventionalcommits
+      working-directory: ./.github/workflows
+    - name: Release to GitHub
+      working-directory: ./.github/workflows
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GIT_AUTHOR_NAME: GitHub-Actions
+        GIT_AUTHOR_EMAIL: githubactions@github.com
+        GIT_COMMITTER_NAME: GitHub-Actions
+        GIT_COMMITTER_EMAIL: githubactions@github.com
+      run: npx semantic-release
