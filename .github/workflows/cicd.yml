@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main  # Change this to your main branch name
-
+      - 'feature/*'
 jobs:
   deploy:
     name: Deploy Serverless Application
@@ -38,6 +38,7 @@ jobs:
           sam build -t template.yaml
 
       - name: Deploy Serverless Application
+        if: github.ref == 'refs/heads/main'
         run: |
           cd inchcape-api
           sam deploy --debug # Change the stack name as needed
