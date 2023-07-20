@@ -19,11 +19,13 @@ Resources:
     Properties:
       CodeUri: .
       PackageType: Image
+      ImageUri: '648347102574.dkr.ecr.us-east-2.amazonaws.com/inchcape-api/inchcape-function-repo'
       Environment:
         Variables:
           URL_TYPICODE: "https://jsonplaceholder.typicode.com/posts"
       Architectures:
         - x86_64
+
       Events:
         Inchcape:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
