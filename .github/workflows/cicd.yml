@@ -27,6 +27,12 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_KEY_INCHCAPE }}
           aws configure set default.region ${{ secrets.AWS_REGION_INCHCAPE }} # Change this to your desired region
 
+      - name: Validate Serverless Application
+        run: |
+          cd inchcape-api
+          sam validate -t template.yaml
+
+
       - name: Build Serverless Application
         run: |
           cd inchcape-api
