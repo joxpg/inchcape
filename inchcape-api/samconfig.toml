@@ -8,4 +8,4 @@ s3_prefix = "inchcape-api"
 region = "us-east-2"
 confirm_changeset = false
 capabilities = "CAPABILITY_IAM"
-image_repositories = []
+image_repositories = ["InchcapeFunction=648347102574.dkr.ecr.us-east-2.amazonaws.com/inchcapeapicb8c8327/inchcapefunctioneccf6b79repo"]
