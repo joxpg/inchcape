@@ -1,6 +1,7 @@
 import sys
 import requests
 import logging
+import json
 from config import credentials
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -11,7 +12,13 @@ def handler(event, context):
     if response.status_code == 200:
         data = response.json()
         logging.info("Data fetched successfully.")
-        return data
+        return {
+            "statusCode": 200,
+            "body": json.dumps(data)  # Convert the JSON data to a string
+        }
     else:
         logging.error(f"Failed to fetch data. Status code: {response.status_code}")
-        return None
+        return {
+            "statusCode": response.status_code,
+            "body": "Internal server error"
+        }
