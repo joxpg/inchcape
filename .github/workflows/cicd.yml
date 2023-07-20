@@ -8,9 +8,6 @@ jobs:
   deploy:
     name: Deploy Serverless Application
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -46,7 +43,11 @@ jobs:
           cd inchcape-api
           sam deploy --debug # Change the stack name as needed
   semanticversion:
+    name: Semantic Version Release
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
     if: github.ref == 'refs/heads/main'  # Add this line to execute the job only on the main branch
     steps:
     - uses: actions/checkout@v3
