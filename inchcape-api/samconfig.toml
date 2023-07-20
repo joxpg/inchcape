@@ -6,7 +6,7 @@ stack_name = "inchcape-api"
 s3_bucket = "inchcape-api-lambdasource"
 s3_prefix = "inchcape-api"
 region = "us-east-2"
-confirm_changeset = true
+confirm_changeset = false
 capabilities = "CAPABILITY_IAM"
 image_repositories = ["InchcapeFunction=648347102574.dkr.ecr.us-east-2.amazonaws.com/inchcape-api/inchcape-function-repo"]
 disable_rollback = true
