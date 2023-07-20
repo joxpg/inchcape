@@ -32,7 +32,6 @@ jobs:
           cd inchcape-api
           sam validate -t template.yaml
 
-
       - name: Build Serverless Application
         run: |
           cd inchcape-api
@@ -41,5 +40,5 @@ jobs:
       - name: Deploy Serverless Application
         run: |
           cd inchcape-api
-          sam deploy --stack-name inchcape-api --template-file template.yaml # Change the stack name as needed
+          sam deploy --debug # Change the stack name as needed
 
