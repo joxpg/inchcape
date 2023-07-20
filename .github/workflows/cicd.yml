@@ -12,11 +12,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install AWS CLI
+      - name: Install Python 3.9
         run: |
           sudo apt-get update
+          sudo apt-get install -y python3.9
+
+      - name: Install AWS CLI and SAM CLI
+        run: |
           sudo apt-get install -y python3-pip
-          pip3 install --user awscli
+          pip3 install --user awscli aws-sam-cli
 
       - name: Configure AWS credentials
         run: |
@@ -28,6 +32,7 @@ jobs:
         run: |
           cd inchcape-api
           sam build -t template.yaml
+          
       - name: Deploy Serverless Application
         run: |
           cd inchcape-api
