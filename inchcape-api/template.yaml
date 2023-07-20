@@ -19,7 +19,6 @@ Resources:
     Properties:
       CodeUri: .
       PackageType: Image
-      ImageUri: '648347102574.dkr.ecr.us-east-2.amazonaws.com/inchcape-api/inchcape-function-repo'
       Environment:
         Variables:
           URL_TYPICODE: "https://jsonplaceholder.typicode.com/posts"
