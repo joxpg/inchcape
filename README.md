@@ -18,6 +18,11 @@ AWS SAM CLI https://github.com/awslabs/aws-sam-cli
 
 ## Getting Started
 
+### Process CICD and Architecture
+
+The follow image specifies how to works the process CICD and architecture: 
+![Process CICD and Architecture](images/Inchcape-Deploy.drawio.png)
+
 ### Local Configuration
 
 1. Clone the repository:
