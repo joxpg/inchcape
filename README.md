@@ -11,11 +11,11 @@ Technical Test for Inchcape. This repository contains a  service that automatica
 - [Contributors](#contributors)
 
 ## Prerequisites
-List prerequisites that user need to have installed
-Python https://www.python.org/
-AWS CLI https://aws.amazon.com/cli/
-AWS SAM CLI https://github.com/awslabs/aws-sam-cli
+Before using this project, ensure you have the following installed:
 
+- [Python](https://www.python.org/)  
+- [AWS CLI](https://aws.amazon.com/cli/)  
+- [AWS SAM CLI](https://github.com/awslabs/aws-sam-cli)  
 ## Getting Started
 
 ### Process CICD and Architecture
